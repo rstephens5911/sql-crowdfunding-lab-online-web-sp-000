@@ -20,6 +20,7 @@ def selects_the_user_name_age_and_pledge_amount_for_all_pledges_alphabetized_by_
   FROM users
   INNER JOIN pledges
   ON pledges.user_id = users.id
+  GROUP BY users.name
   ORDER BY(users.name) ASC"
 end
 
@@ -28,7 +29,6 @@ def selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_
     FROM projects
     JOIN pledges
     ON pledges.project_id = projects.id
-
 
   "
 end
